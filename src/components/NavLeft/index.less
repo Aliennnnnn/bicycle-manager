@@ -14,5 +14,7 @@
     }
 }
 .menu {
-    height: calc(100vh);
+    // 在 less 里使用calc()需要进行转义
+    // 否则会渲染为 height: calc(8vh)
+    height: ~"calc(100vh - 92px)"
 }

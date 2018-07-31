@@ -2,9 +2,12 @@ import React from 'react'
 import { Row, Col } from 'antd'
 import './index.less'
 import Util from '../../utils/utils'
+import Axios from '../../axios'
 
 export default class Header extends React.Component {
-    state = {}
+    state = {
+        city: 'beijing'
+    }
     componentWillMount() {
         setInterval(() => {
             let sysTime = Util.formateDate(new Date().getTime());
@@ -17,7 +20,18 @@ export default class Header extends React.Component {
 
     // 调用天气API
     getWeatherAPIData() {
-
+        let city = '北京'
+        Axios.jsonp({
+            url: `http://api.map.baidu.com/telematics/v3/weather?location=${encodeURIComponent(city)}&output=json&ak=3p49MVra6urFRGOT9s8UBWr2`
+        }).then((res) => {
+            if(res.status == 'success') {
+                let data = res.results[0].weather_data[0];
+                this.setState({
+                    dayPicture: data.dayPictureUrl,
+                    weather: data.weather
+                })
+            }
+        })
     }
 
     render() {
@@ -34,7 +48,12 @@ export default class Header extends React.Component {
                     <Col span="4" className="breadcrumb-title">首页</Col>
                     <Col span="20" className="weather">
                         <span className="date">{this.state.sysTime}</span>
-                        <span className="weather-detail">晴转多云</span>
+                        <span className="weather-img">
+                            <img src={this.state.dayPicture} alt="天气"/>
+                        </span>
+                        <span className="weather-detail">
+                            {this.state.weather}
+                        </span>
                     </Col>
                 </Row>
             </div>
