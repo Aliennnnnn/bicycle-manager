@@ -1,7 +1,8 @@
 import React from 'react'
 import MenuConfig from '../../config/menuConfig'
-import { Menu, Icon } from 'antd'
+import { Menu } from 'antd'
 import './index.less'
+import { NavLink } from 'react-router-dom'
 
 const SubMenu = Menu.SubMenu;
 export default class NavLeft extends React.Component {
@@ -10,6 +11,7 @@ export default class NavLeft extends React.Component {
         this.setState({menuTreeNode});
     }
     // 菜单渲染，递归判断有没有下一级菜单
+    // 创建一个菜单 node 树插入到 Menu 中
     renderMenu = (data) => {
         return data.map((item) => {
             if(item.children) {
@@ -19,7 +21,9 @@ export default class NavLeft extends React.Component {
                     </SubMenu>
                 )
             }
-            return <Menu.Item key={item.key}>{item.title}</Menu.Item>
+            return  <Menu.Item key={item.key}>
+                        <NavLink to={item.key}>{item.title}</NavLink>
+                    </Menu.Item>
         })
     }
     render() {

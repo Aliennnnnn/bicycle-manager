@@ -24,7 +24,7 @@ export default class Header extends React.Component {
         Axios.jsonp({
             url: `http://api.map.baidu.com/telematics/v3/weather?location=${encodeURIComponent(city)}&output=json&ak=3p49MVra6urFRGOT9s8UBWr2`
         }).then((res) => {
-            if(res.status == 'success') {
+            if(res.status === 'success') {
                 let data = res.results[0].weather_data[0];
                 this.setState({
                     dayPicture: data.dayPictureUrl,
