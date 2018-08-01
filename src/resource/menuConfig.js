@@ -4,7 +4,7 @@ const menuList = [
         key: '/admin/home'
     },
     {
-       ktitle: 'UI',
+       title: 'UI',
        key: '/admin/ui',
        children: [
            {
@@ -17,7 +17,7 @@ const menuList = [
            },
            {
                title: 'Loading',
-               key: '/admin/ui/loading',
+               key: '/admin/ui/loadings',
            },
            {
                title: '通知提醒',
