@@ -10,7 +10,8 @@ import Notice from './pages/ui/notice'
 import Tabs from './pages/ui/tabs'
 import FormLogin from './pages/form/login'
 import FormRegister from './pages/form/register'
-import NoMatch from './pages/nomatch'
+import BasicTable from './pages/table/basicTable'
+import NoMatch from './pages/nomatch/nomatch'
 
 export default class IRouter extends React.Component {
     render() {
@@ -28,6 +29,7 @@ export default class IRouter extends React.Component {
                                 <Route path="/admin/ui/tabs" component={Tabs} />
                                 <Route path="/admin/form/login" component={FormLogin} />
                                 <Route path="/admin/form/reg" component={FormRegister} />
+                                <Route path="/admin/table/basic" component={BasicTable} />
                                 {/* 匹配不到路由时显示 404 页面*/}
                                 <Route component={NoMatch} />
                             </Switch>
