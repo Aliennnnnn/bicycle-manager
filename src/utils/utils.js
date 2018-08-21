@@ -9,18 +9,18 @@ export default {
         }
         return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${appendZero(date.getHours())}:${appendZero(date.getMinutes())}:${appendZero(date.getSeconds())} `
     },
-    pagination(data, callback){
+    pagination(data,callback){
         return {
             onChange:(current)=>{
-                callback(current)
+               callback(current)
             },
-            current: data.result.page,
-            pageSize: data.result.page_size,
+            current:data.result.page,
+            pageSize:data.result.page_size,
             total: data.result.total,
-            showTotal: () => {
+            showTotal:()=>{
                 return `共${data.result.total}条`
             },
-            showQuickJumper: true
+            showQuickJumper:true
         }
-    }
+    },
 }
