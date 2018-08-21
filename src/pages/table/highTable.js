@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Table, Modal, message, Button } from 'antd';
-import Utils from '../../utils/utils'
+import { Card, Table, Modal, message } from 'antd';
 import axios from '../../axios/index';
 
 export default class BasicTable extends React.Component {
@@ -26,6 +25,7 @@ export default class BasicTable extends React.Component {
             if (res.code === 0) {
                 res.result.list.map((item, index) => {
                     item.key = index;
+                    return item;
                 })
                 this.setState({
                     dataSource: res.result.list,
@@ -41,6 +41,7 @@ export default class BasicTable extends React.Component {
         let ids = [];
         rows.map((item) => {
             ids.push(item.id)
+            return item;
         })
         Modal.confirm({
             title: '删除提示',

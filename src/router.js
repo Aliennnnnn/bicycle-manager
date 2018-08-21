@@ -13,6 +13,7 @@ import FormRegister from './pages/form/register'
 import BasicTable from './pages/table/basicTable'
 import HighTable from './pages/table/highTable'
 import City from './pages/city/index'
+import OrderDetail from './pages/order/index'
 import NoMatch from './pages/nomatch/nomatch'
 
 export default class IRouter extends React.Component {
@@ -34,12 +35,14 @@ export default class IRouter extends React.Component {
                                 <Route path="/admin/table/basic" component={BasicTable} />
                                 <Route path="/admin/form/high" component={HighTable} />
                                 <Route path="/admin/city" component={City} />
+                                <Route path="/admin/detail" component={OrderDetail} />
                                 {/* 匹配不到路由时显示 404 页面*/}
                                 <Route component={NoMatch} />
 
                             </Switch>
                         </Admin>
                     } />
+                    <Route path="/order/detail" />
                 </App>
             </HashRouter>
         )

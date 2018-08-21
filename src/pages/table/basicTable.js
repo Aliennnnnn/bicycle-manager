@@ -27,6 +27,7 @@ export default class BasicTable extends React.Component {
             if(res.code === 0){
                 res.result.list.map((item, index) => {
                     item.key = index;
+                    return item;
                 })
                 this.setState({
                     dataSource2: res.result.list,
@@ -46,6 +47,7 @@ export default class BasicTable extends React.Component {
         let ids = [];
         rows.map((item) => {
             ids.push(item.id)
+            return item;
         })
         Modal.confirm({
             title: '删除提示',
