@@ -42,7 +42,7 @@ export default class IRouter extends React.Component {
                             </Switch>
                         </Admin>
                     } />
-                    <Route path="/order/detail" />
+                    <Route path="/order/detail"  />
                 </App>
             </HashRouter>
         )
