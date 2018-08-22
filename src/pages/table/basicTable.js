@@ -34,7 +34,7 @@ export default class BasicTable extends React.Component {
                     selectedRowKeys: [],
                     selectedRows: null,
                     pagination: Utils.pagination(res,(current)=>{
-                        _this.params.page = current;
+                        this.params.page = current;
                         this.request();
                     })
                 })

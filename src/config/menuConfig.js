@@ -70,17 +70,7 @@ const menuList = [
         key: '/admin/city'
     }, {
         title: '订单管理',
-        key: '/admin/form/order',
-        children: [
-            {
-                title: '订单详情',
-                key: 'detail',
-            },
-            {
-                title: '结束订单',
-                key: 'finish',
-            },
-        ]
+        key: '/admin/detail',
     }, {
         title: '员工管理',
         key: '/admin/user'
