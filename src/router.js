@@ -16,6 +16,7 @@ import City from './pages/city/index'
 import Common from './common.js'
 import Order from './pages/order/index'
 import User from './pages/user/index'
+import BikeMap from './pages/map/bikeMap'
 import OrderDetail from './pages/order/detail'
 import NoMatch from './pages/nomatch/nomatch'
 
@@ -25,7 +26,7 @@ export default class IRouter extends React.Component {
             <HashRouter>
                 <App>
                     <Route path="/login" component={Login}/>
-                    <Route path="/admin" render={()=>
+                    <Route path="/" render={()=>
                         <Admin>
                             <Switch>
                                 <Route path="/admin/ui/buttons" component={Buttons} />
@@ -40,6 +41,7 @@ export default class IRouter extends React.Component {
                                 <Route path="/admin/city" component={City} />
                                 <Route path="/admin/detail" component={Order} />
                                 <Route path="/admin/user" component={User} />
+                                <Route path="/admin/bikeMap" component={BikeMap} />
                                 {/* 匹配不到路由时显示 404 页面*/}
                                 <Route component={NoMatch} />
 
