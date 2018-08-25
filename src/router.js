@@ -17,6 +17,10 @@ import Common from './common.js'
 import Order from './pages/order/index'
 import User from './pages/user/index'
 import BikeMap from './pages/map/bikeMap'
+import Bar from './pages/echarts/bar'
+import Pie from './pages/echarts/pie'
+import Line from './pages/echarts/line'
+import Permission from './pages/permission'
 import OrderDetail from './pages/order/detail'
 import NoMatch from './pages/nomatch/nomatch'
 
@@ -42,6 +46,10 @@ export default class IRouter extends React.Component {
                                 <Route path="/admin/detail" component={Order} />
                                 <Route path="/admin/user" component={User} />
                                 <Route path="/admin/bikeMap" component={BikeMap} />
+                                <Route path="/admin/bar" component={Bar} />
+                                <Route path="/admin/pie" component={Pie} />
+                                <Route path="/admin/line" component={Line} />
+                                <Route path="/admin/permission" component={Permission} />
                                 {/* 匹配不到路由时显示 404 页面*/}
                                 <Route component={NoMatch} />
 

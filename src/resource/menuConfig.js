@@ -88,7 +88,7 @@ const menuList = [
         title: '车辆地图',
         key: '/admin/bikeMap'
     },{
-        title: '图标',
+        title: '图表',
         key: '/admin/charts',
         children: [
             {
